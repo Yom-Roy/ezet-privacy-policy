@@ -1,0 +1,203 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utility Classes */
+.text-white {
+    color: #ffffff;
+}
+
+.text-gray-300 {
+    color: #d1d5db;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.bg-gradient {
+    background: linear-gradient(to right, #1E90FF, #00FF99);
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #1E90FF, #00FF99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.p-3 {
+    padding: 0.75rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-10 {
+    margin-bottom: 2.5rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.max-w-screen-md {
+    max-width: 768px;
+}
+
+.h-28 {
+    height: 7rem;
+}
+
+.w-28 {
+    width: 7rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-base {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.leading-relaxed {
+    line-height: 1.75;
+}
+
+.list-disc {
+    list-style-type: disc;
+}
+
+.list-inside {
+    list-style-position: inside;
+}
+
+.border-t {
+    border-top: 1px solid #374151;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Responsive Typography (basic example) */
+@media (min-width: 640px) {
+    .sm\:text-base {
+        font-size: 1rem;
+    }
+
+    .sm\:text-xl {
+        font-size: 1.25rem;
+    }
+
+    .sm\:text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .sm\:text-4xl {
+        font-size: 2.25rem;
+    }
+}
