@@ -1,139 +1,233 @@
 <!doctype html>
-<html lang="en" class="bg-black text-white">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EZET Privacy Policy</title>
-    <link rel="stylesheet" href="style.css" />
-    <script>
-        document.documentElement.classList.add('bg-black', 'text-white');
-    </script>
-    <link rel="icon" href="ezetlogo.jpeg" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ezet Privacy Vault</title>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="font-sans bg-black text-white">
-    <div class="flex min-h-screen w-full flex-col items-center px-4 py-8">
-        <!-- Logo & Title -->
-        <section class="mb-10 flex flex-col items-center">
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="logo" style="display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+                <div
+                    style="background-color: #111; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
+                    <img src="favicon.png" alt="Ezet" width="35" height="35">
+                </div>
+                <span style="font-size: 18px; font-weight: 500;">Ezet</span>
+            </div>
+            <span style="font-size: 28px; font-weight: 700; margin-top: 4px;">Privacy Vault</span>
+        </div>
+
+
+        <div class="nav-item active" data-target="slider"><i class="ri-slideshow-2-line"></i> Motion Note</div>
+        <div class="nav-item" data-target="collect"><i class="ri-database-2-line"></i> Collect</div>
+        <div class="nav-item" data-target="use"><i class="ri-function-line"></i> Use</div>
+        <div class="nav-item" data-target="services"><i class="ri-apps-line"></i> Services</div>
+        <div class="nav-item" data-target="rights"><i class="ri-user-settings-line"></i> Rights</div>
+    </nav>
+
+    <!-- Main -->
+    <main class="content">
+
+        <!-- Motion Slider -->
+        <section id="slider" class="section">
+            <div class="stage">
+                <div class="card">
+                    <div class="scene" id="scene">
+                        <article class="slide" data-index="0">
+                            <h2 class="big-title">Your Data, Your Control</h2>
+                            <div class="subtitle">Ezet Privacy Policy</div>
+                        </article>
+                        <article class="slide" data-index="1">
+                            <h2 class="big-title">What We Collect</h2>
+                            <ul class="list">
+                                <li><i class="ri-user-line"></i> Name, email, phone, address</li>
+                                <li><i class="ri-smartphone-line"></i> Device data: IP, OS, crash logs</li>
+                                <li><i class="ri-image-line"></i> Media: profile pic, docs</li>
+                            </ul>
+                        </article>
+                        <article class="slide" data-index="2">
+                            <h2 class="big-title">How We Use It</h2>
+                            <ul class="list">
+                                <li><i class="ri-verified-badge-line"></i> Verify accounts</li>
+                                <li><i class="ri-map-pin-line"></i> Connect with nearby pros</li>
+                                <li><i class="ri-notification-3-line"></i> Send OTPs & updates</li>
+                                <li><i class="ri-shield-keyhole-line"></i> Security & fraud checks</li>
+                            </ul>
+                        </article>
+                        <article class="slide" data-index="3">
+                            <h2 class="big-title">Across Services</h2>
+                            <ul class="list">
+                                <li><i class="ri-chat-1-line"></i> ZChat — secure messaging</li>
+                                <li><i class="ri-group-line"></i> Bimo — social platform</li>
+                                <li><i class="ri-rocket-line"></i> Future Ezet apps — seamless login</li>
+                            </ul>
+                        </article>
+                        <article class="slide" data-index="4">
+                            <h2 class="big-title">Your Rights</h2>
+                            <ul class="list">
+                                <li><i class="ri-edit-2-line"></i> Access/update data</li>
+                                <li><i class="ri-delete-bin-7-line"></i> Request deletion</li>
+                                <li><i class="ri-notification-off-line"></i> Opt out anytime</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="head">
+                        <div class="controls">
+                            <button id="prevBtn" class="btn"><i class="ri-arrow-left-s-line"></i>Prev</button>
+                            <button id="playBtn" class="btn"><i class="ri-pause-fill" id="playIcon"></i>Pause</button>
+                            <button id="nextBtn" class="btn">Next<i class="ri-arrow-right-s-line"></i></button>
+                            <button id="copyBtn" class="btn secondary"><i class="ri-file-copy-line"></i>Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Static Sections -->
+        <section id="collect" class="section">
+            <h2><i class="ri-database-2-line"></i> What We Collect</h2>
+            <ul>
+                <li><i class="ri-user-line"></i> Name, email, phone</li>
+                <li><i class="ri-smartphone-line"></i> Device info</li>
+                <li><i class="ri-image-line"></i> Profile/media</li>
+            </ul>
+        </section>
+
+        <section id="use" class="section">
+            <h2><i class="ri-function-line"></i> How We Use It</h2>
+            <ul>
+                <li><i class="ri-verified-badge-line"></i> Verify accounts</li>
+                <li><i class="ri-map-pin-line"></i> Match with pros</li>
+                <li><i class="ri-notification-3-line"></i> Notify & send OTPs</li>
+                <li><i class="ri-shield-keyhole-line"></i> Secure services</li>
+            </ul>
+        </section>
+
+        <section id="services" class="section">
+            <h2><i class="ri-apps-line"></i> Across Services</h2>
+            <ul>
+                <li><i class="ri-chat-1-line"></i> ZChat</li>
+                <li><i class="ri-group-line"></i> Bimo</li>
+                <li><i class="ri-rocket-line"></i> Future apps</li>
+            </ul>
+        </section>
+
+        <section id="rights" class="section">
+            <h2><i class="ri-user-settings-line"></i> Your Rights</h2>
+            <ul>
+                <li><i class="ri-edit-2-line"></i> Edit data</li>
+                <li><i class="ri-delete-bin-7-line"></i> Delete account</li>
+                <li><i class="ri-notification-off-line"></i> Opt-out</li>
+            </ul>
+        </section>
+
+        <footer style="background:#111; color:#ccc; padding: 40px 20px; font-size:14px;">
             <div
-                class="flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-green-400 p-3">
-                <img src="ezetlogo.jpeg" alt="EZET Logo" class="h-full w-full rounded-full bg-black object-contain" />
-            </div>
-            <h1 class="gradient-text mt-4 text-3xl sm:text-4xl font-bold text-center">EZET Privacy Policy</h1>
-            <p class="mt-2 max-w-md text-center text-gray-400 text-sm sm:text-base">Effective Date: <span
-                    id="date"></span></p>
-        </section>
+                style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;">
 
-        <!-- TL;DR -->
-        <section class="mb-8 w-full max-w-screen-md">
-            <h2 class="gradient-text mb-2 text-xl sm:text-2xl font-semibold">TL;DR</h2>
-            <p class="text-gray-300 text-base">We collect basic user info to connect you with local service pros. Your
-                data is encrypted and only used within EZET and our other apps like ZChat or BIMO. We never sell your
-                data. You're in control. We may charge users for verification purposes.</p>
-        </section>
+                <!-- Left section: Logo + short tagline -->
+                <div style="flex:1; min-width:200px;">
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <img src="favicon.png" alt="Ezet" width="28" height="28">
+                        <span style="font-size:16px; font-weight:600;">Ezet</span>
+                    </div>
+                    <p style="margin-top:8px; color:#888;">Your data, your control.</p>
+                </div>
 
-        <!-- Full Privacy Policy -->
-        <section class="w-full max-w-screen-md space-y-6 text-base leading-relaxed text-gray-300">
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">1. What We Collect</h3>
-                <ul class="ml-4 list-inside list-disc">
-                    <li><strong>Personal Details:</strong> Name, Email, Phone Number, Location</li>
-                    <li><strong>Device Data:</strong> IP address, App version, OS, Crash reports</li>
-                    <li><strong>Media Uploads:</strong> Photos, documents, profile pictures</li>
-                </ul>
-            </div>
+                <!-- Middle section: Navigation links -->
+                <div style="flex:1; min-width:150px;">
+                    <h4 style="margin-bottom:10px; font-size:15px; color:#fff;">Quick Links</h4>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                        <li><a href="https://www.notion.so/25be2222515780f58d51cdf4f3fe50d0"
+                                style="color:#ccc; text-decoration:none;">Privacy Vault On Notion</a></li>
+                    </ul>
+                </div>
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">2. How We Use Your Data</h3>
-                <p>We use your data to:</p>
-                <ul class="ml-4 list-inside list-disc">
-                    <li>Register and verify accounts</li>
-                    <li>Connect users with service providers</li>
-                    <li>Send notifications and updates</li>
-                    <li>Prevent fraud and ensure security</li>
-                </ul>
+                <!-- Right section: Socials -->
+                <div style="flex:1; min-width:150px;">
+                    <h4 style="margin-bottom:10px; font-size:15px; color:#fff;">Connect</h4>
+                    <div style="display:flex; gap:12px;">
+                        <a href="https://instagram.com/ezet_app" style="color:#ccc; text-decoration:none;">Instagram</a>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">3. Use Across Other Apps</h3>
-                <p>Your uploaded data may be reused securely within our other platforms, such as:</p>
-                <ul class="ml-4 list-inside list-disc">
-                    <li><strong>ZChat</strong> – Secure, face-authenticated messaging</li>
-                    <li><strong>BIMO</strong> – Live blogging and photo sharing</li>
-                    <li>Any future apps from EZET Industries</li>
-                </ul>
-                <p class="mt-2">❤️ <strong>We do not sell your data.</strong> Only our apps access it for better user
-                    experience.</p>
+            <!-- Bottom note -->
+            <div style="text-align:center; margin-top:30px; font-size:12px; color:#666;">
+                © 2025 Ezet Industries. All rights reserved.
             </div>
+        </footer>
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">4. Data Security</h3>
-                <p>Your information is encrypted and stored securely on verified cloud platforms. Only authorized
-                    personnel can access it.</p>
-                <ul class="ml-4 list-inside list-disc">
-                    <li>Secure cloud infrastructure</li>
-                    <li>Data encryption at rest and in transit</li>
-                    <li>Internal access controls</li>
-                </ul>
-            </div>
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">5. User Rights</h3>
-                <p>You can:</p>
-                <ul class="ml-4 list-inside list-disc">
-                    <li>Access or update your data anytime</li>
-                    <li>Request account deletion</li>
-                    <li>Opt out of non-essential notifications</li>
-                </ul>
-                <p>Email us at <a href="mailto:clashersoham07@gmail.com"
-                        class="font-medium text-white underline">clashersoham07@gmail.com</a></p>
-            </div>
+    </main>
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">6. Children’s Privacy</h3>
-                <p>Our services are not intended for children under 13. We do not knowingly collect data from minors.
-                </p>
-            </div>
+    <script>
+        /* Sidebar highlight */
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.section');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById(item.dataset.target).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const r = sec.getBoundingClientRect();
+                if (r.top <= 120 && r.bottom > 120) current = sec.id;
+            });
+            navItems.forEach(i => i.classList.toggle('active', i.dataset.target === current));
+        });
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">7. Policy Updates</h3>
-                <p>We may revise this policy. We'll notify users via app notifications or email when changes are made.
-                </p>
-            </div>
+        /* Motion slider */
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const copyBtn = document.getElementById('copyBtn');
+        const progressBar = document.getElementById('progressBar');
+        let current = 0, playing = true, timer = null, tickStart = null;
+        const DURATION = 4000;
 
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">8. Contact Us</h3>
-                <p>If you have any questions or need help, please contact:</p>
-                <ul class="mt-2 ml-2 list-none text-white">
-                    <li><strong>Email:</strong> <a href="mailto:clashersoham07@gmail.com"
-                            class="underline text-white">clashersoham07@gmail.com</a></li>
-                    <li><strong>Company:</strong> EZET Industries</li>
-                    <li><strong>Location:</strong> Barasat, Kolkata, India</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="gradient-text text-lg sm:text-xl font-semibold">9. How We Earn Money</h3>
-                <p>EZET is free to use, we earn from:</p>
-                <ul class="ml-4 list-inside list-disc">
-                    <li><strong>Verification Charges:</strong> Users who want to get verified as a professional or
-                        provider must pay a one-time or recurring verification fee.</li>
-                </ul>
-                <p class="mt-2">We always ensure full transparency in any transaction. Charges will be shown clearly
-                    before any payment is made.</p>
-            </div>
-
-            <p class="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
-                © <span id="year"></span> EZET Industries. All rights reserved.
-            </p>
-            <script>
-                document.getElementById('year').textContent = new Date().getFullYear();
-                document.getElementById('date').textContent = new Date().toDateString();
-            </script>
-        </section>
-    </div>
-    <script src="//code.tidio.co/aq9olieb92gpesauyy0qncmhvyfresjm.js" async></script>
+        function show(idx) {
+            slides.forEach(s => s.classList.remove('visible'));
+            slides[idx].classList.add('visible');
+            current = idx;
+        }
+        function next() { show((current + 1) % slides.length); }
+        function prev() { show((current - 1 + slides.length) % slides.length); }
+        function start() {
+            stop(); playing = true; playIcon.className = 'ri-pause-fill'; tickStart = performance.now();
+            timer = setInterval(() => { next(); tickStart = performance.now(); }, DURATION); requestAnimationFrame(tick);
+        }
+        function stop() { playing = false; playIcon.className = 'ri-play-fill'; if (timer) clearInterval(timer); }
+        function toggle() { playing ? stop() : start(); }
+        function tick(ts) { if (!tickStart || !playing) return; const pct = (ts - tickStart) / DURATION * 100; progressBar.style.width = Math.min(100, pct) + '%'; requestAnimationFrame(tick); }
+        prevBtn.onclick = () => { prev(); stop(); };
+        nextBtn.onclick = () => { next(); stop(); };
+        playBtn.onclick = toggle;
+        document.addEventListener('keydown', e => {
+            if (e.code === 'ArrowLeft') { prev(); stop(); }
+            if (e.code === 'ArrowRight') { next(); stop(); }
+            if (e.code === 'Space') { e.preventDefault(); toggle(); }
+        });
+        copyBtn.onclick = async () => {
+            const text = [...slides].map(s => s.innerText).join('\n\n');
+            try { await navigator.clipboard.writeText(text); copyBtn.innerText = 'Copied'; setTimeout(() => copyBtn.innerHTML = '<i class="ri-file-copy-line"></i>Copy', 1200); } catch (e) { prompt('Copy text', text); }
+        }
+        show(0); start();
+    </script>
 </body>
 
 </html>
