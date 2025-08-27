@@ -10,34 +10,57 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
     <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
 <body>
 
+    <!-- Mobile navigation bar -->
+    <div class="nav-mobile">
+        <div class="logo-mobile">
+            <div
+                style="width: 35px; height: 35px; background: #111; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff;">
+                <img src="favicon.png" alt="Ezet" height="35" width="35">
+            </div>
+            <span>Ezet</span>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+            <i class="ri-menu-line"></i>
+        </button>
+    </div>
+
+
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Sidebar -->
-    <nav class="sidebar">
+    <nav class="sidebar" id="sidebar">
+
         <div class="logo" style="display: flex; flex-direction: column; align-items: flex-start;">
             <div style="display: flex; align-items: center; gap: 6px;">
                 <div
                     style="background-color: #111; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-                    <img src="favicon.png" alt="Ezet" width="35" height="35">
+                    <div class="logo-div"
+                        style="width: 35px; height: 35px; background: #111; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff;">
+                        <img class="logo-icon" src="favicon.png" alt="Ezet" height="35" width="35">
+                    </div>
                 </div>
-                <span style="font-size: 18px; font-weight: 500;">Ezet</span>
+                <span style="font-size: 18px; font-weight: 500; color: #666;">Ezet</span>
             </div>
             <span style="font-size: 28px; font-weight: 700; margin-top: 4px;">Privacy Vault</span>
         </div>
 
-
-        <div class="nav-item active" data-target="slider"><i class="ri-slideshow-2-line"></i> Motion Note</div>
-        <div class="nav-item" data-target="collect"><i class="ri-database-2-line"></i> Collect</div>
-        <div class="nav-item" data-target="use"><i class="ri-function-line"></i> Use</div>
-        <div class="nav-item" data-target="services"><i class="ri-apps-line"></i> Services</div>
-        <div class="nav-item" data-target="rights"><i class="ri-user-settings-line"></i> Rights</div>
+        <div class="nav-item active" data-target="slider" tabindex="0"><i class="ri-slideshow-2-line"></i> Motion Note
+        </div>
+        <div class="nav-item" data-target="collect" tabindex="0"><i class="ri-database-2-line"></i> Collect</div>
+        <div class="nav-item" data-target="use" tabindex="0"><i class="ri-function-line"></i> Use</div>
+        <div class="nav-item" data-target="services" tabindex="0"><i class="ri-apps-line"></i> Services</div>
+        <div class="nav-item" data-target="rights" tabindex="0"><i class="ri-user-settings-line"></i> Rights</div>
     </nav>
 
     <!-- Main -->
-    <main class="content">
+    <main class="content" id="content">
 
         <!-- Motion Slider -->
         <section id="slider" class="section">
@@ -81,16 +104,29 @@
                                 <li><i class="ri-notification-off-line"></i> Opt out anytime</li>
                             </ul>
                         </article>
+                        <div class="scene-footer">
+                            <span>Motion Note</span>
+                            <div class="progress">
+                                <b id="progressBar"></b>
+                            </div>
+                        </div>
                     </div>
                     <div class="head">
                         <div class="controls">
-                            <button id="prevBtn" class="btn"><i class="ri-arrow-left-s-line"></i>Prev</button>
-                            <button id="playBtn" class="btn"><i class="ri-pause-fill" id="playIcon"></i>Pause</button>
-                            <button id="nextBtn" class="btn">Next<i class="ri-arrow-right-s-line"></i></button>
-                            <button id="copyBtn" class="btn secondary"><i class="ri-file-copy-line"></i>Copy</button>
-                            <a style="text-decoration: none;"
-                                href="https://www.notion.so/25be2222515780f58d51cdf4f3fe50d0" id="moreBtn"
-                                class="btn secondary">More Details<i class="ri-arrow-right-s-line"></i></a>
+                            <button id="prevBtn" class="btn" aria-label="Previous slide"><i
+                                    class="ri-arrow-left-s-line"></i><span>Prev</span></button>
+                            <button id="playBtn" class="btn" aria-label="Play/Pause slideshow"><i class="ri-pause-fill"
+                                    id="playIcon"></i><span>Pause</span></button>
+                            <button id="nextBtn" class="btn" aria-label="Next slide"><span>Next</span><i
+                                    class="ri-arrow-right-s-line"></i></button>
+                            <button id="copyBtn" class="btn secondary" aria-label="Copy content"><i
+                                    class="ri-file-copy-line"></i><span>Copy</span></button>
+                            <a href="https://www.notion.so/25be2222515780f58d51cdf4f3fe50d0" id="moreBtn"
+                                class="btn secondary" target="_blank" rel="noopener noreferrer"
+                                aria-label="View more details">
+                                <i class="ri-more-2-line"></i>
+                                <span>More Details</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -135,103 +171,47 @@
             </ul>
         </section>
 
-        <footer style="background:#111; color:#ccc; padding: 40px 20px; font-size:14px;">
-            <div
-                style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;">
-
+        <footer>
+            <div class="footer-content">
                 <!-- Left section: Logo + short tagline -->
-                <div style="flex:1; min-width:200px;">
+                <div class="footer-section">
                     <div style="display:flex; align-items:center; gap:8px;">
-                        <img src="favicon.png" alt="Ezet" width="28" height="28">
+                        <div
+                            style="width: 28px; height: 28px; background: black; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 14px;">
+                            <img src="favicon.png" alt="Ezet" height="28" width="28">
+                        </div>
                         <span style="font-size:16px; font-weight:600;">Ezet</span>
                     </div>
                     <p style="margin-top:8px; color:#888;">Your data, your control.</p>
                 </div>
 
                 <!-- Middle section: Navigation links -->
-                <div style="flex:1; min-width:150px;">
-                    <h4 style="margin-bottom:10px; font-size:15px; color:#fff;">Quick Links</h4>
-                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
-                        <li><a href="https://www.notion.so/25be2222515780f58d51cdf4f3fe50d0"
-                                style="color:#ccc; text-decoration:none;">Privacy Vault On Notion</a></li>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://www.notion.so/25be2222515780f58d51cdf4f3fe50d0" target="_blank"
+                                rel="noopener noreferrer">Privacy Vault On Notion</a></li>
                     </ul>
                 </div>
 
                 <!-- Right section: Socials -->
-                <div style="flex:1; min-width:150px;">
-                    <h4 style="margin-bottom:10px; font-size:15px; color:#fff;">Connect</h4>
+                <div class="footer-section">
+                    <h4>Connect</h4>
                     <div style="display:flex; gap:12px;">
-                        <a href="https://instagram.com/ezet_app" style="color:#ccc; text-decoration:none;">Instagram</a>
+                        <a href="https://instagram.com/ezet_app" target="_blank" rel="noopener noreferrer">Instagram</a>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom note -->
-            <div style="text-align:center; margin-top:30px; font-size:12px; color:#666;">
+            <div class="footer-bottom">
                 © 2025 Ezet Industries. All rights reserved.
             </div>
         </footer>
 
-
     </main>
 
-    <script>
-        /* Sidebar highlight */
-        const navItems = document.querySelectorAll('.nav-item');
-        const sections = document.querySelectorAll('.section');
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                document.getElementById(item.dataset.target).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(sec => {
-                const r = sec.getBoundingClientRect();
-                if (r.top <= 120 && r.bottom > 120) current = sec.id;
-            });
-            navItems.forEach(i => i.classList.toggle('active', i.dataset.target === current));
-        });
-
-        /* Motion slider */
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const playBtn = document.getElementById('playBtn');
-        const playIcon = document.getElementById('playIcon');
-        const copyBtn = document.getElementById('copyBtn');
-        const progressBar = document.getElementById('progressBar');
-        let current = 0, playing = true, timer = null, tickStart = null;
-        const DURATION = 4000;
-
-        function show(idx) {
-            slides.forEach(s => s.classList.remove('visible'));
-            slides[idx].classList.add('visible');
-            current = idx;
-        }
-        function next() { show((current + 1) % slides.length); }
-        function prev() { show((current - 1 + slides.length) % slides.length); }
-        function start() {
-            stop(); playing = true; playIcon.className = 'ri-pause-fill'; tickStart = performance.now();
-            timer = setInterval(() => { next(); tickStart = performance.now(); }, DURATION); requestAnimationFrame(tick);
-        }
-        function stop() { playing = false; playIcon.className = 'ri-play-fill'; if (timer) clearInterval(timer); }
-        function toggle() { playing ? stop() : start(); }
-        function tick(ts) { if (!tickStart || !playing) return; const pct = (ts - tickStart) / DURATION * 100; progressBar.style.width = Math.min(100, pct) + '%'; requestAnimationFrame(tick); }
-        prevBtn.onclick = () => { prev(); stop(); };
-        nextBtn.onclick = () => { next(); stop(); };
-        playBtn.onclick = toggle;
-        document.addEventListener('keydown', e => {
-            if (e.code === 'ArrowLeft') { prev(); stop(); }
-            if (e.code === 'ArrowRight') { next(); stop(); }
-            if (e.code === 'Space') { e.preventDefault(); toggle(); }
-        });
-        copyBtn.onclick = async () => {
-            const text = [...slides].map(s => s.innerText).join('\n\n');
-            try { await navigator.clipboard.writeText(text); copyBtn.innerText = 'Copied'; setTimeout(() => copyBtn.innerHTML = '<i class="ri-file-copy-line"></i>Copy', 1200); } catch (e) { prompt('Copy text', text); }
-        }
-        show(0); start();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
